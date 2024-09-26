@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - main
+      - jorge
 
 jobs:
   build:
@@ -39,3 +40,4 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm run fix
