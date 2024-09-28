@@ -4,6 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'Home',
+      href: getPermalink('/'),
     },
     {
       text: 'Pages',
@@ -32,9 +33,9 @@ export const headerData = {
         {
           text: 'Blog List',
           href: getBlogPermalink(),
-        }
+        },
       ],
-    }
+    },
   ],
   actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
