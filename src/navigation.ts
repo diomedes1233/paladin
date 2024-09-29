@@ -1,13 +1,18 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Home',
-      href: getPermalink('/'),
+      title: 'Home',  // Cambiado de text a title
+      links: [
+        {
+          text: 'Home',
+          href: getPermalink('/'),
+        },
+      ],
     },
     {
-      text: 'Pages',
+      title: 'Pages',  // Cambiado de text a title
       links: [
         {
           text: 'Services',
@@ -28,7 +33,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'Blog',
+      title: 'Blog',  // Cambiado de text a title
       links: [
         {
           text: 'Blog List',
@@ -37,69 +42,63 @@ export const headerData = {
       ],
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [
+    { text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' },
+  ],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
-      links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+      title: 'Home',
+      links: [  // Cambiado de text y href a links
+        {
+          text: 'Home',
+          href: getPermalink('/'),
+        },
       ],
     },
     {
-      title: 'Platform',
+      title: 'Pages',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        {
+          text: 'Services',
+          href: getPermalink('/services'),
+        },
+        {
+          text: 'Pricing',
+          href: getPermalink('/pricing'),
+        },
+        {
+          text: 'About us',
+          href: getPermalink('/about'),
+        },
+        {
+          text: 'Contact',
+          href: getPermalink('/contact'),
+        },
       ],
     },
     {
-      title: 'Support',
+      title: 'Blog',
       links: [
         { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
       ],
     },
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Privacy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: 'https://wa.me/3112799550' },
+    { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:info@paladin.build' },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/luifer991/paladin' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/your-linkedin-profile' },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
+    <a class="flex items-center" href={getHomePermalink()}>
+      <img class="w-16 h-auto" src="/src/assets/images/hero-image.png" alt="logo paladin dot build" />
+    </a>
   `,
 };
