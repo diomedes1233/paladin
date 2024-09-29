@@ -3,7 +3,7 @@ import { getPermalink, getBlogPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      title: 'Home',  // Cambiado de text a title
+      text: 'Home', // Cambiado de text a title
       links: [
         {
           text: 'Home',
@@ -12,7 +12,7 @@ export const headerData = {
       ],
     },
     {
-      title: 'Pages',  // Cambiado de text a title
+      text: 'Pages', // Cambiado de text a title
       links: [
         {
           text: 'Services',
@@ -33,7 +33,7 @@ export const headerData = {
       ],
     },
     {
-      title: 'Blog',  // Cambiado de text a title
+      text: 'Blog', // Cambiado de text a title
       links: [
         {
           text: 'Blog List',
@@ -42,16 +42,15 @@ export const headerData = {
       ],
     },
   ],
-  actions: [
-    { text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' },
-  ],
+  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
 
 export const footerData = {
   links: [
     {
       title: 'Home',
-      links: [  // Cambiado de text y href a links
+      links: [
+        // Cambiado de text y href a links
         {
           text: 'Home',
           href: getPermalink('/'),
@@ -81,9 +80,7 @@ export const footerData = {
     },
     {
       title: 'Blog',
-      links: [
-        { text: 'Docs', href: '#' },
-      ],
+      links: [{ text: 'Docs', href: '#' }],
     },
   ],
   secondaryLinks: [
